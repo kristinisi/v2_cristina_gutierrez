@@ -293,6 +293,7 @@ class ManagerController {
     this[VIEW].showCategories(this[MODEL].categories);
     const randoms = this[MODEL].getRandomDishes();
     this[VIEW].showRandomDishes(randoms);
+    this[VIEW].showWe();
     this[VIEW].bindDishesCategoryList(this.handleDishesCategoryList);
   };
 

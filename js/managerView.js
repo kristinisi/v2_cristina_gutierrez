@@ -2,6 +2,7 @@ const EXCECUTE_HANDLER = Symbol("excecuteHandler");
 
 class ManagerView {
   constructor() {
+    this.we = document.getElementById("we");
     this.main = document.getElementById("main");
     this.categories = document.getElementById("categories");
     this.menu = document.querySelector(".barra__style");
@@ -89,7 +90,55 @@ class ManagerView {
       );
       container.append(div);
     }
+
     this.main.appendChild(container);
+  }
+
+  showWe() {
+    console.log("estoy aqui");
+    this.we.replaceChildren();
+    this.we.insertAdjacentHTML(
+      "beforeend",
+      `
+      <div class="miniSeparador--horizontal"></div>
+
+      <div class="reserva" id="seccionReserva" itemprop="adress" itemscope itemtype="https://schema.org/PostalAddress">
+          <header>
+              <h1>RESERVA</h1>
+              <p>Puedes realizar tu reserva de dos formas:</p>
+          </header>
+          <article class="reserva__telefonica" >Reservar por teléfono: <span itemprop="telephone">926868344</span> </article><br>
+          <article class="reserva__online">Reservar online, a través de nuestro formulario
+              <br><br><button><a href="./formulario.html">ONLINE</a></button>
+          </article>
+      </div>
+  
+      <div class="miniSeparador--horizontal"></div>
+  
+      <div class="nosotros" id="seccionNosotros">
+          <header>
+              <h1>NOSOTROS</h1>
+              <h3>¿Quiénes somos?</h3>
+          </header>
+          <div class="nosotros__imagen"></div>
+          <article class="nosotros_descripcion">
+              Bienvenidos a Mar, el restaurante fundado con pasión y dedicación por un equipo de amantes del mar. Nosotros, los fundadores, nos enorgullece presentarles una experiencia culinaria única, donde cada plato es una obra maestra de calidad fresca directamente del océano.
+  
+              <br><br>Con raíces profundas en la tradición gastronómica marina, hemos creado un espacio donde la frescura y la excelencia se fusionan para ofrecerle lo mejor del mar en cada bocado. Nuestro compromiso con la calidad se refleja en cada detalle, desde la cuidadosa selección de ingredientes hasta la presentación artística de cada plato.
+  
+              <br><br>En Mar, no solo servimos alimentos; ofrecemos una experiencia que celebra la riqueza del mar y la dedicación a la cocina excepcional. Únase a nosotros para explorar el sabor auténtico del océano, donde cada comida es una celebración de la frescura, la pasión y la tradición. ¡Bienvenidos a bordo!        
+          </article>
+         <article class="nosotros__situacion" itemprop="adress" itemscope itemtype="https://schema.org/PostalAddress">
+              <h3>¿Dónde encontrarnos?</h3>
+              <p itemprop="streetAddress">Calle Lope de Vega, 33</p>
+              <p itemprop="addressLocality">Madrid</p>
+              <p itemprop="postalCode">11442</p>
+         </article>
+      </div> 
+      `
+    );
+
+    // this.we.appendChild(container);
   }
 
   showCategoriesInMenu(categories) {
@@ -171,6 +220,7 @@ class ManagerView {
   listDishes(dishes, name, pageTitle) {
     this.categories.replaceChildren();
     this.main.replaceChildren();
+    this.we.replaceChildren();
     this.main.classList.add("cambiar--fondo");
 
     const nav = document.createElement("nav");
@@ -300,6 +350,7 @@ class ManagerView {
 
     this.categories.replaceChildren();
     this.main.replaceChildren();
+    this.we.replaceChildren();
 
     const container = document.createElement("div");
     container.classList.add("container");
@@ -359,6 +410,7 @@ class ManagerView {
   showRestaurant(restaurant, name) {
     this.categories.replaceChildren();
     this.main.replaceChildren();
+    this.web.replaceChildren();
 
     const nav = document.createElement("nav");
     nav.id = "migas_restaurante";
