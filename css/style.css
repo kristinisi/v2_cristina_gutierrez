@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  /* z-index: 5; */
 }
 
 body {
@@ -188,10 +189,15 @@ hr {
 }
 
 #dishes-list {
-  width: 40%;
+  width: 100%;
   margin: auto;
   text-align: center;
   margin-bottom: 50px;
+}
+
+#dishes-list p {
+  width: 40%;
+  margin: auto;
 }
 
 #category-list > h1 {
@@ -200,6 +206,8 @@ hr {
 
 .plato {
   margin-top: 30px;
+  z-index: 5;
+  position: relative;
 }
 
 .plato img {
@@ -266,7 +274,7 @@ hr {
   padding: 0;
 }
 
-main {
+#main {
   justify-content: center;
   width: 100%;
   text-align: center;
@@ -324,4 +332,73 @@ main {
 #aux {
   background-image: url("../img/marmol2.jpg");
   background-size: cover;
+}
+
+#peces {
+  z-index: 1;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  opacity: 70%;
+}
+
+#imagen-pez1 {
+  width: 2%;
+  position: absolute;
+  animation: desplazar1 20s infinite linear, rotar1 10s infinite linear;
+  top: 50%; /* Posición vertical para el primer pez */
+  left: 0; /* Posición inicial a la izquierda */
+  transform: rotate(-45deg); /* Rota la imagen 45 grados */
+}
+
+#imagen-pez2 {
+  width: 2%;
+  position: absolute;
+  animation: desplazar2 20s infinite linear, rotar2 10s infinite linear;
+  top: 0; /* Posición vertical para el segundo pez */
+  left: 50%; /* Posición inicial arriba */
+  transform: rotate(35deg); /* Rota la imagen 45 grados */
+}
+
+#imagen-pez3 {
+  width: 2%;
+  position: absolute;
+  animation: desplazar3 20s infinite linear, rotar3 10s infinite linear;
+  top: 50%; /* Posición vertical para el tercer pez */
+  right: 0; /* Posición inicial a la derecha */
+  transform: rotate(145deg); /* Rota la imagen 45 grados */
+}
+
+@keyframes desplazar1 {
+  0% {
+    top: 50%; /* Posición vertical inicial */
+    left: 0; /* Posición inicial a la izquierda */
+  }
+  100% {
+    top: 100%; /* Posición final abajo */
+    left: 100%; /* Posición final a la derecha */
+  }
+}
+
+@keyframes desplazar2 {
+  0% {
+    top: 0; /* Posición vertical inicial arriba */
+    left: 50%; /* Posición inicial */
+  }
+  100% {
+    top: 100%; /* Posición final abajo */
+    left: 0%; /* Posición final a la derecha */
+  }
+}
+
+@keyframes desplazar3 {
+  0% {
+    top: 100%; /* Posición vertical inicial */
+    right: 0; /* Posición inicial a la derecha */
+  }
+  100% {
+    top: 0%; /* Posición final abajo */
+    right: 100%; /* Posición final a la izquierda */
+  }
 }

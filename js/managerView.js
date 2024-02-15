@@ -241,7 +241,13 @@ class ManagerView {
     container.id = "dishes-list";
     container.insertAdjacentHTML(
       "beforeend",
-      '<section class="row seccion__plato"></section>'
+      `<section class="row seccion__plato">
+      <div id="peces">
+        <img src="./img/fish.gif" id="imagen-pez1"/>
+        <img src="./img/fish.gif" id="imagen-pez2"/>
+        <img src="./img/fish.gif" id="imagen-pez3"/>
+      </div>
+      </section>`
     );
 
     for (const dish of dishes) {
@@ -249,7 +255,6 @@ class ManagerView {
       div.insertAdjacentHTML(
         "beforeend",
         `
-        <div class="miniSeparador"></div>
         <div class="plato">
               <a class='imagen' data-name='${dish.name}'>
                 <img src="${dish.image}" style="cursor: pointer">
