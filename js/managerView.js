@@ -415,7 +415,7 @@ class ManagerView {
   showRestaurant(restaurant, name) {
     this.categories.replaceChildren();
     this.main.replaceChildren();
-    this.web.replaceChildren();
+    this.we.replaceChildren();
 
     const nav = document.createElement("nav");
     nav.id = "migas_restaurante";
@@ -517,7 +517,7 @@ class ManagerView {
       let newWindow = window.open(
         "plato.html",
         windowName,
-        "width=800, height=346, top=250, left=350, titlebar=yes, toolbar=no, menubar=no, location=no"
+        "width=800, height=300, top=250, left=350, titlebar=yes, toolbar=no, menubar=no, location=no"
       );
 
       // Verificar si se pudo abrir la ventana
