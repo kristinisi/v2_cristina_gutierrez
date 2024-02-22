@@ -87,7 +87,7 @@
                         <h3>Datos de la tarjeta:</h3>
                         <div class="tarjeta__numero">
                             <label for="tarjeta">Número de Tarjeta: </label>
-                            <input id="tarjeta" type="text" pattern="[0-9]{16}" maxlength="16" minlength="16" required>
+                            <input id="tarjeta" type="text" pattern="[0-9]{4}[ ][0-9]{4}[ ][0-9]{4}[ ][0-9]{4}" maxlength="19" minlength="19" placeholder="XXXX XXXX XXXX XXXX" required>
                             <div class="valid-feedback">✓</div>
                             <div class="invalid-feedback">El número de tarjeta debe de ser 16 número sin nada entre medias.</div> 
                         </div>
@@ -127,10 +127,16 @@
 
             <div id="confirmDialog" class="modal">
                 <div class="modal-content">
-                  <span class="close">&times;</span>
                   <p>¿Estás seguro de que deseas reservar?</p>
                   <button id="confirmarReserva">Sí</button>
                   <button class="close">Cancelar</button>
+                </div>
+              </div>
+
+              <div id="reservaCompletada" class="modal">
+                <div class="modal-content">
+                  <span class="closeConfirmacion">&times;</span>
+                  <p>Su reserva se ha confirmado</p>
                 </div>
               </div>
         </section> 

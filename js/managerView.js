@@ -47,19 +47,19 @@ class ManagerView {
     this.categories.insertAdjacentHTML(
       "beforeend",
       `<div>
-        <a class='categories__enlace' href="#category-list" data-category="Moluscos">
+        <a class='categories__enlace' href="#Moluscos" data-category="Moluscos">
         <img src="./img/_calamar.png" alt="Categoría Moluscos y Cefalopodos">
           <h4>Moluscos y Cefalópodos</h4>
         </a>
       </div>
       <div>
-          <a class='categories__enlace' href="#category-list" data-category="Crustaceos">
+          <a class='categories__enlace' href="#Crustaceos" data-category="Crustaceos">
               <img src="./img/_langosta.png" alt="Categoría Crustaceos">
               <h4>Crustáceos</h4>
           </a>
       </div>
       <div>
-          <a class='categories__enlace' href="#category-list" data-category="Pescados">
+          <a class='categories__enlace' href="#Pescados" data-category="Pescados">
               <img src="./img/_pez.png" alt="Categoría Pescados">
               <h4>Pescados</h4>
           </a>
@@ -153,7 +153,7 @@ class ManagerView {
     for (const category of categories) {
       container.insertAdjacentHTML(
         "beforeend",
-        `<li><a data-category="${category.category.name}" class="dropdown-item" href="#productlist">${category.category.name}</a></li>`
+        `<li><a data-category="${category.category.name}" class="dropdown-item" href="#${category.category.name}">${category.category.name}</a></li>`
       );
     }
     li.append(container);
@@ -280,9 +280,9 @@ class ManagerView {
         this[EXCECUTE_HANDLER](
           handler,
           [category],
-          "#category-list",
+          "#${link.href}",
           { action: "dishesCategoryList", category },
-          "#category-list",
+          "#${link.href}",
           event
         );
       });
@@ -298,9 +298,9 @@ class ManagerView {
         this[EXCECUTE_HANDLER](
           handler,
           [category],
-          "#category-list",
+          "#${link.href}",
           { action: "dishesCategoryList", category },
-          "#category-list",
+          "#${link.href}",
           event
         );
       });

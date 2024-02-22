@@ -205,8 +205,15 @@ h4 {
   margin-top: 50px;
 }
 
+.seccion__plato {
+  width: 90%;
+  margin: auto;
+}
+
 .seccion__plato div {
   padding: 0;
+  width: 90%;
+  margin: auto;
 }
 
 .plato {
@@ -346,8 +353,8 @@ h4 {
 #peces {
   z-index: 1;
   position: absolute;
-  height: 200vh;
-  width: 100vw;
+  height: 140vh;
+  width: 90vw;
   overflow: hidden;
   opacity: 70%;
   padding: 0;
@@ -412,4 +419,10 @@ h4 {
     top: 0%; /* Posición final abajo */
     right: 100%; /* Posición final a la izquierda */
   }
+}
+
+#mapa {
+  margin: auto;
+  margin-top: 12vh;
+  height: 80%;
 }
